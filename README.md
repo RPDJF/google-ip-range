@@ -24,6 +24,10 @@ The application provides three routes:
 
 Each route returns the data in `text/plain` format, making it easy to use in systems that don't support JSON.
 
+## Why not entirely Python? 🤔
+
+I'm not familiar with Python and I just wanted to mess with with Express.js. However, Python might have been a better choice for this task.
+
 ## Why this project? 🤔
 
 The main motivation behind this project is to provide a solution for systems that don't support JSON format for IP ranges, like pfSense. By converting the Google IP ranges JSON into plain text, we can easily use the data in such systems.
