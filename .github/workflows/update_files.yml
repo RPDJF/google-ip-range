@@ -6,13 +6,13 @@ on:
 
 jobs:
   update:
-    runs-on: windows-latest
-
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Checkout sources
+      uses: actions/checkout@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -35,10 +35,12 @@ jobs:
     - name: Run script
       run: python update_files.py
 
-    - name: Commit and push if it changed
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update ip-range files"
-        git push
+    - name: Get author and committer info from HEAD commit
+      uses: rlespinasse/git-commit-data-action@v1
+
+    - name: Commit changed files
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "update files"
+        commit_user_name: "GitHub Action"
+        commit_user_email: "action@github.com"
