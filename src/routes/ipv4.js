@@ -11,7 +11,7 @@ router.get("/ipv4", async (req, res) => {
         res.setHeader('Content-Type', 'text/plain');
         res.send(get_ipv4(iprange.data.prefixes));
     } catch (error) {
-		console.log(error);
+        console.log(error);
         res.status(500).send("Error retrieving IP range data");
     }
 });

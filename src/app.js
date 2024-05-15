@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 
 const defaultRoutes = require("./routes/default");
-
 const ipv4Routes = require("./routes/ipv4");
 const ipv6Routes = require("./routes/ipv6");
 
