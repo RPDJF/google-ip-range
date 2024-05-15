@@ -1,0 +1,24 @@
+{
+  "name": "google-ip-range",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "cd src && node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RPDJF/google-ip-range.git"
+  },
+  "author": "RPDJF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RPDJF/google-ip-range/issues"
+  },
+  "homepage": "https://github.com/RPDJF/google-ip-range#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "express": "^4.19.2"
+  }
+}
