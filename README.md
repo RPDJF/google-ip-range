@@ -4,6 +4,12 @@ This project serves as a proxy to the [Google IP ranges JSON](https://www.gstati
 
 The application is built with Express.js and runs on Node.js.
 
+It provides two ways to access the data: by running the application locally as or by fetching the data directly from the GitHub repository thanks to the github actions.
+
+When running it locally, you are guaranteed to have the latest data, as the application fetches the data from the Google IP ranges JSON every time it's accessed.
+
+In the other hand, fetching the ip range from raw github is easier however the files are updated each hour, so it may not be the latest data.
+
 ## Getting Started 🚀
 
 To run the application, follow these steps:
@@ -23,10 +29,6 @@ The application provides three routes:
 - `/ipv6`: Returns only IPv6 ranges.
 
 Each route returns the data in `text/plain` format, making it easy to use in systems that don't support JSON.
-
-## Why not entirely Python? 🤔
-
-I'm not familiar with Python and I just wanted to mess with with Express.js. However, Python might have been a better choice for this task.
 
 ## Why this project? 🤔
 
