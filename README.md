@@ -1,6 +1,6 @@
-# Google IP Ranges Proxy 🌐
+# Google IP Range 🌐
 
-Welcome to the **Google IP Ranges Proxy** project! This tool converts the [Google IP ranges JSON](https://www.gstatic.com/ipranges/goog.json) into plain text format, perfect for systems like pfSense that don't accept JSON data.
+Welcome to the **Google IP Range** project! This proxy tool converts the [Google IP ranges JSON](https://www.gstatic.com/ipranges/goog.json) into plain text format, perfect for systems like pfSense that don't accept JSON data.
 
 ## Features ✨
 
@@ -58,4 +58,4 @@ You can always access the latest data directly from the raw files in this reposi
 
 ## Conclusion 🎉
 
-The Google IP Ranges Proxy simplifies fetching Google's IP ranges in a compatible format for systems like pfSense. A small yet powerful tool for network management! 🚀
+The Google IP Range simplifies fetching Google's IP ranges in a compatible format for systems like pfSense. A small yet powerful tool for network management! 🚀
