@@ -1,5 +1,15 @@
 const axios = require("axios");
 
+async function fetch_iprange() {
+    try {
+        const iprange = await axios.get("https://www.gstatic.com/ipranges/goog.json");
+        return (iprange.data.prefixes);
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
 function  get_ipv4(json) {
     let output = "";
     for (const key in json)
@@ -16,4 +26,4 @@ function  get_ipv4(json) {
     return (output);
 }
 
-module.exports = { get_ipv4, get_ipv6 };
+module.exports = { fetch_iprange, get_ipv4, get_ipv6 };

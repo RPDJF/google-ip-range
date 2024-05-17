@@ -1,24 +1,36 @@
 # Google IP Ranges Proxy 🌐
 
-This project serves as a proxy to the [Google IP ranges JSON](https://www.gstatic.com/ipranges/goog.json), converting it into plain text format. This is particularly useful for systems like pfSense, which don't accept JSON data for IP ranges.
+Welcome to the **Google IP Ranges Proxy** project! This tool converts the [Google IP ranges JSON](https://www.gstatic.com/ipranges/goog.json) into plain text format, perfect for systems like pfSense that don't accept JSON data.
 
-The application is built with Express.js and runs on Node.js.
+## Features ✨
 
-It provides two ways to access the data: by running the application locally as or by fetching the data directly from the GitHub repository thanks to the github actions.
-
-When running it locally, you are guaranteed to have the latest data, as the application fetches the data from the Google IP ranges JSON every time it's accessed.
-
-In the other hand, fetching the ip range from raw github is easier however the files are updated each hour, so it may not be the latest data.
+- Built with **Express.js** and runs on **Node.js**.
+- Provides three access methods:
+  - Run the app locally.
+  - Use the built-in fetch script.
+  - Fetch data directly from the GitHub repository via GitHub Actions.
 
 ## Getting Started 🚀
 
-To run the application, follow these steps:
+### Run Locally (Port 8080)
 
-1. Clone the repository.
-2. Run `npm install` to install the dependencies.
-3. Run `npm start` to start the application.
+```bash
+git clone "https://github.com/rpdjf/google-ip-range"
+npm install
+npm start
+```
 
-The application will start running on port 8080.
+### Fetch Files Without Running the Web Server
+```bash
+git clone "https://github.com/rpdjf/google-ip-range"
+npm install
+npm run fetch
+```
+
+### Fetch from Raw GitHub Files
+- [Google IP Range](https://raw.githubusercontent.com/rpdjf/google-ip-range/main/google-ip-range.txt)
+- [Google IPv4 Range](https://raw.githubusercontent.com/rpdjf/google-ip-range/main/google-ip-range-ipv4.txt)
+- [Google IPv6 Range](https://raw.githubusercontent.com/rpdjf/google-ip-range/main/google-ip-range-ipv6.txt)
 
 ## Routes 🛣️
 
@@ -28,18 +40,22 @@ The application provides three routes:
 - `/ipv4`: Returns only IPv4 ranges.
 - `/ipv6`: Returns only IPv6 ranges.
 
-Each route returns the data in `text/plain` format, making it easy to use in systems that don't support JSON.
+All routes return data in text/plain format.
 
 ## Why this project? 🤔
 
-The main motivation behind this project is to provide a solution for systems that don't support JSON format for IP ranges, like pfSense. By converting the Google IP ranges JSON into plain text, we can easily use the data in such systems.
+This project is designed to help systems that don't support JSON for IP ranges, such as pfSense. By converting Google's IP ranges JSON into plain text, the data can be easily integrated.
 
 ## GitHub Actions 🤖
 
-This repository includes a GitHub Actions workflow that exports the data from the three routes daily. The exported data is saved in the parent directory as `google-ip-range.txt`, `google-ip-range-ipv4.txt`, and `google-ip-range-ipv6.txt`.
+Our GitHub Actions workflow exports the data daily from the three routes into:
 
-You can access the latest data directly from the raw files in this repository.
+- `google-ip-range.txt`
+- `google-ip-range-ipv4.txt`
+- `google-ip-range-ipv6.txt`
+
+You can always access the latest data directly from the raw files in this repository.
 
 ## Conclusion 🎉
 
-This project simplifies the process of fetching Google's IP ranges in a format that's compatible with systems like pfSense. It's a small but mighty tool in the world of network management! 🚀
+The Google IP Ranges Proxy simplifies fetching Google's IP ranges in a compatible format for systems like pfSense. A small yet powerful tool for network management! 🚀

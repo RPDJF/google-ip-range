@@ -22,18 +22,8 @@ jobs:
     - name: Install Node.js dependencies
       run: npm install
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install Python dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
-
     - name: Run script
-      run: python update_files.py
+      run: npm run fetch
 
     - name: Get author and committer info from HEAD commit
       uses: rlespinasse/git-commit-data-action@v1
