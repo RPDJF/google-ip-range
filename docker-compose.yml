@@ -1,0 +1,10 @@
+services:
+  google-ip-range:
+    container_name: google-ip-range
+    build: .
+    image: rpdjf/google-ip-range
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Europe/Zurich
+    restart: always

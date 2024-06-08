@@ -14,6 +14,21 @@ Welcome to the **Google IP Range** project! This proxy tool converts the [Google
 
 ### Run Locally (Port 8080)
 
+#### Using the official Docker image
+Docker compose file:
+```yaml
+services:
+  google-ip-range:
+    container_name: google-ip-range
+    image: rpdjf/google-ip-range:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=Europe/Zurich
+    restart: always
+```
+
+#### Using nodejs
 ```bash
 git clone "https://github.com/rpdjf/google-ip-range"
 npm install
@@ -42,6 +57,20 @@ The application provides three routes:
 
 All routes return data in text/plain format.
 
+## Build the Docker Image 🐳
+```bash
+git clone "https://github.com/rpdjf/google-ip-range"
+cd google-ip-range
+docker build -t rpdjf/google-ip-range .
+```
+Then you can run the image with the following command:
+```bash
+docker compose up -d
+```
+or without docker compose:
+```bash
+docker run -d -p 8080:8080 rpdjf/google-ip-range
+```
 ## Why this project? 🤔
 
 This project is designed to help systems that don't support JSON for IP ranges, such as pfSense. By converting Google's IP ranges JSON into plain text, the data can be easily integrated.
